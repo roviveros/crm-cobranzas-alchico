@@ -1160,7 +1160,7 @@ function vReferencias() {
   <td>${a.uid ? `<span data-uid="${esc(a.uid)}">Vinculado</span> <button class="btn sm d" data-desv="${esc(a.id)}">Desvincular</button>` : '<span class="mut sm">Sin vincular</span>'}</td><td class="n">${fmt(cnt[a.id] || 0)}</td><td></td></tr>`).join('')}
   </tbody></table></div>
   <div class="bar" style="margin-top:8px"><input id="nAs" placeholder="Nombre del nuevo asesor"><button class="btn" id="addAs">Agregar asesor</button></div>
-  <p class="sm mut"><b>Admin</b>: ve la cartera de todos los asesores, carga la base, edita referencias y reasigna clientes. Para que pueda guardar esos cambios, compártele la página con permiso de <b>edición</b> (Editor); a los demás asesores alcanza con permiso para contribuir. Un Admin puede estar además Activo para recibir cartera.</p>
+  <p class="sm mut"><b>Admin</b>: ve la cartera de todos los asesores, carga la base, edita referencias y reasigna clientes. El permiso se aplica en la base de datos: basta con marcar la casilla y guardar. Un Admin puede estar además Activo para recibir cartera.</p>
   <p class="sm mut">Para que un asesor use la plataforma: creale un usuario con su correo y una contraseña en Supabase (Authentication › Users) y pasale el enlace del CRM. Al ingresar, elegirá su nombre y te llegará la solicitud aquí. Para darle permisos de administración, marcalo como Admin.</p>
   ${inact ? `<div class="note n-amb">${inact} clientes asignados a asesores inactivos. <button class="btn sm" id="redis">Redistribuir entre activos</button></div>` : ''}
   <h3>Canales de contacto</h3><textarea id="rCan">${esc(c.canales.join('\n'))}</textarea><p class="sm mut">Uno por línea.</p>
