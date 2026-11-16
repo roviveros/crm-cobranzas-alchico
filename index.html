@@ -749,7 +749,7 @@ function derive() {
     if (!cl) estado = 'Fuera de base'; else if (cl.atMax < (Number(c.diasMin) || 5)) estado = 'Regularizado';
     const liq = cl && conLiq ? liqCliente(cl, fLiq, c) : null;
     return {
-      doc, x, cl, liq, nom: cl?.nom || x.nom || doc, gs, gsMes, last, prox, proms, promUlt, recs, recMes, estado,
+      doc, x, cl, liq, nom: cl?.nom || x.nom || (recs.find(r => r.nom) || {}).nom || (gs.find(g => g.nom) || {}).nom || doc, gs, gsMes, last, prox, proms, promUlt, recs, recMes, estado,
       gestionado: gsMes.length > 0, contactado: gsMes.some(g => resC.has(g.res)),
       atMax: cl?.atMax ?? 0, saldo: cl?.saldo ?? 0, asignado: !!x.a
     };
